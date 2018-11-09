@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  # annotations:
+  # labels:
+  # name:
+  # namespace:
+spec:
+  template:
+    # metadata:
+    #   labels:
+    spec:
+      containers:
+      - image: testing-image:0.0.0
+        imagePullPolicy: IfNotPresent
+        # name: 
+        # command:
+        # - xxx
+        # - yyy
+        # env:
+        # - name: XXX
+        #   value: YYY
+      restartPolicy: OnFailure
+      # terminationGracePeriodSeconds:
