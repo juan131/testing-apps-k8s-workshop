@@ -8,17 +8,17 @@ YELLOW='\033[38;5;3m'
 
 ## Logging functions
 log() {
-    printf "%b\n" "${*}" >&2
+  printf "%b\n" "${*}" >&2
 }
 
 info() {
-    log "${GREEN}INFO ${RESET} ==> ${*}"
+  log "${GREEN}INFO ${RESET} ==> ${*}"
 }
 
 warn() {
-    log "${YELLOW}WARN ${RESET} ==> ${*}"
+  log "${YELLOW}WARN ${RESET} ==> ${*}"
 }
 
 error() {
-    log "${RED}ERROR ${RESET} ==> ${*}"
+  log "${RED}ERROR ${RESET} ==> ${*}"
 }
