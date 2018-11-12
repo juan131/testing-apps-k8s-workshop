@@ -16,14 +16,6 @@ git:
   tag: latest
   pullPolicy: IfNotPresent
 
-# Git repository to clone
-#
-repository: https://github.com/fjagugar/blog-example
-
-# Git revision to checkout
-#
-revision: master
-
 # Number of replicas for the application
 #
 replicas: 1
@@ -60,6 +52,12 @@ mongodb:
   mongodbPassword: secret_password
 
 ####### Complete this part
+
+# Git repository to clone
+# repository:
+
+# Git revision to checkout
+# revision:
 
 # Custom environment variables
 # extraEnv:

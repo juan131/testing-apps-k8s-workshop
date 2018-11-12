@@ -19,7 +19,7 @@ set -o pipefail
 is_deploy_ready() {
   local deploy_name="${1:?missing value}"
 
-  if [[ "$(kubectl get deploy "$deploy_name" jsonpath='{.status.readyReplicas}')" != "1" ]]; then
+  if [[ "$(kubectl get deploy "$deploy_name" -o jsonpath='{.status.readyReplicas}')" != "1" ]]; then
     return 0
   else
     return 1
@@ -37,11 +37,13 @@ is_chart_released() {
   local found=1
 
   read -r -a charts <<< "$(tr '\n' ' ' <<< "$(helm list --short)")"
-  for chart in "${charts[@]}"; do
-    if [[ "$chart" = "$chart_name" ]]; then
-      found=0
-    fi
-  done
+  if [[ -n ${charts:-} ]]; then
+    for chart in "${charts[@]}"; do
+      if [[ "$chart" = "$chart_name" ]]; then
+        found=0
+      fi
+    done
+  fi
   return $found
 }
 
@@ -60,7 +62,7 @@ if [[ "$TARGET" = "production" ]] || [[ "$TARGET" = "staging" ]]; then
 
   if [[ "$TARGET" = "production" ]]; then
     release_name="cms-production"
-    values_file="values--production.yaml"
+    values_file="values-production.yaml"
     cms_host="cms.production.innosoft"
   fi
 
