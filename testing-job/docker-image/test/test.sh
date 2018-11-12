@@ -4,16 +4,16 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-## Set Testing Mode
+# Set Testing Mode
 TESTING_MODE=${TESTING_MODE:-"staging"}
 
 if [[ "$TESTING_MODE" = "production" ]] || [[ "$TESTING_MODE" = "staging" ]]; then
-  ## Tests that are executed both on production and staging
-  /test/node_modules/.bin/mocha --timeout 20000 /test/validation/common-test.js
+  # Tests that are executed both on production and staging
+  /test/node_modules/.bin/mocha --timeout 5000 /test/verification/common-tests.js
 
   if [[ "$TESTING_MODE" = "staging" ]]; then
-    ## Tests that are only executed on staging
-    /test/node_modules/.bin/mocha --timeout 20000 /test/validation/xxx-test.js
+    # Tests that are only executed on staging
+    /test/node_modules/.bin/mocha --timeout 20000 /test/verification/mongo-tests.js
   fi
 
 else

@@ -7,7 +7,6 @@ COPY test /test
 WORKDIR /test
 
 # Install required npm modules
-RUN npm install chai debug http mocha path
+RUN npm install
 
 CMD ["bash",  "test.sh"]
-

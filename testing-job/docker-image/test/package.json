@@ -1,0 +1,17 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "Testing application",
+  "main": "index.js",
+  "scripts": {
+    "test": "./test.sh"
+  },
+  "author": "Juan Ariza",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "chai": "",
+    "chai-http": "",
+    "mocha": "",
+    "mongoose": ""
+  }
+}

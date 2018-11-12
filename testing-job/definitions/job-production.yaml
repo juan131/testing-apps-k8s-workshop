@@ -11,9 +11,9 @@ spec:
     #   labels:
     spec:
       containers:
-      - image: testing-image:0.0.0
+      - image: testing-image:1.0.0
         imagePullPolicy: IfNotPresent
-        # name: 
+        # name:
         # command:
         # - xxx
         # - yyy

@@ -1,0 +1,67 @@
+# Bitnami node image
+# ref: https://hub.docker.com/r/bitnami/node
+#
+image:
+  registry: docker.io
+  repository: bitnami/node
+  tag: 8.12.0-prod
+  pullPolicy: IfNotPresent
+
+# Bitnami git image
+# ref: https://hub.docker.com/r/bitnami/git
+#
+git:
+  registry: docker.io
+  repository: bitnami/git
+  tag: latest
+  pullPolicy: IfNotPresent
+
+# Git repository to clone
+#
+repository: https://github.com/fjagugar/blog-example
+
+# Git revision to checkout
+#
+revision: master
+
+# Number of replicas for the application
+#
+replicas: 1
+
+# Application port
+#
+applicationPort: 3000
+
+# Kubernetes Service Configuration
+service:
+  type: ClusterIP
+  port: 80
+
+# Configure ingress resource that allow you to access the application.
+# ref: http://kubernetes.io/docs/user-guide/ingress/
+#
+ingress:
+  ## Set to true to enable ingress record generation
+  enabled: true
+  ## The list of hostnames to be covered with this ingress record.
+  hosts:
+  - name: cms.testing.innosoft
+    path: /
+
+#
+# MongoDB chart configuration
+# ref: https://github.com/helm/charts/blob/master/stable/mongodb/values.yaml
+#
+mongodb:
+  install: true
+  ## MongoDB custom user and database
+  mongodbUsername: user
+  mongodbDatabase: cms_db
+  mongodbPassword: another_secret_password
+
+####### Complete this part
+
+# Custom environment variables
+# extraEnv:
+#  - name: XXX
+#    value: YYY
