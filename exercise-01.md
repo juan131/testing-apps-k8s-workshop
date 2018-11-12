@@ -137,7 +137,6 @@ $ kubectl create -f "$(git rev-parse --show-toplevel)/testing-job/definitions/jo
 
 - Delete the job
 
-
 ### Other resources
 
 Scripts to automatically deploy the application and running the tests are provided under the [scripts](./scripts) directory.

@@ -10,6 +10,8 @@ TESTING_MODE=${TESTING_MODE:-"staging"}
 if [[ "$TESTING_MODE" = "production" ]] || [[ "$TESTING_MODE" = "staging" ]]; then
   # Tests that are executed both on production and staging
   /test/node_modules/.bin/mocha --timeout 5000 /test/verification/common-tests.js
+  /test/node_modules/.bin/casperjs test /test/functional/login.js
+  /test/node_modules/.bin/casperjs test /test/functional/clickOnPageMenu.js
 
   if [[ "$TESTING_MODE" = "staging" ]]; then
     # Tests that are only executed on staging
