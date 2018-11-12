@@ -10,8 +10,11 @@
   "license": "Apache-2.0",
   "dependencies": {
     "chai": "",
+    "debug": "",
     "chai-http": "",
     "mocha": "",
-    "mongoose": ""
+    "mongoose": "",
+    "path": "",
+    "casperjs": ""
   }
 }
