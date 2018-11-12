@@ -63,7 +63,7 @@ docker exec -it TEST_CONTAINER_ID bash
 - Once inside the container, modify tests files using
 
 ```javascript
-casper.start('http://node:300');
+casper.start('http://node:3000');
 ```
 
 instad of
