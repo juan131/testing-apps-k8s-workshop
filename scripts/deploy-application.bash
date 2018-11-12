@@ -85,6 +85,7 @@ if [[ "$TARGET" = "production" ]] || [[ "$TARGET" = "staging" ]]; then
     sleep 5
     counter=$((counter - 1))
   done
+  sleep 10
   info "Deployment ready!"
 
   # Set a password for Admin user

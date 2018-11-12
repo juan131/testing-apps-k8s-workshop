@@ -64,3 +64,6 @@ else
     error "Testing mode \"$TESTING_MODE\" not supported"
     error " - Supported testing modes are: production and staging"
 fi
+
+info "Deleting K8s job..."
+kubectl delete jobs/${job_name}

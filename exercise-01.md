@@ -80,7 +80,7 @@ To create this K8s job, it's necessary to:
 
 - Create a Docker Image for the pod used on the job. Under the directory [testing-job/docker-image](./testing-job/docker-image) you'll find a **Dockerfile** that can be used to do so.
 
-| Note: The image uses some the tests available under the directories [testing-job/docker-image/test/verification](./testing-job/docker-image/test/verification) and [testing-job/docker-image/test/functional](./testing-job/docker-image/test/functional). On this exercise, we'll only used the ones under the verification folder which uses Mocha to do some basic testing on the app.
+>  Note: The image uses some the tests available under the directories [testing-job/docker-image/test/verification](./testing-job/docker-image/test/verification) and [testing-job/docker-image/test/functional](./testing-job/docker-image/test/functional). On this exercise, we'll only used the ones under the verification folder which uses Mocha to do some basic testing on the app.
 
 - Complete the test `testing-job/docker-image/test/verification/common-tests.js` to practise with Mocha.
 - Use the command below to create the image:
@@ -93,7 +93,7 @@ $ docker build . -t testing-image:1.0.0
 
 - Create the K8s job definition. Use the skeletons provided under the directory [testing-job/definitions](./testing-job/definitions) to do so.
 
-| Note: Check [official docs](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/) fore more information about Jobs definitions.
+> Note: Check [official docs](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/) fore more information about Jobs definitions.
 
 - Launch the job to test the application and wait for the results:
 
