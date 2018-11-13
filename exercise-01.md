@@ -27,7 +27,7 @@ $ /scripts/setup-linux.bash
 or 
 
 ```bash
-$ /scripts/setup-mac.bash
+$ /scripts/setup-osx.bash
 ```
 for MacOS operating sysmtes
 
