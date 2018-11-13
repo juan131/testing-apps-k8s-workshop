@@ -22,8 +22,14 @@ To setup the scenario used on this workshop, we need to:
 Bash scripts to do so on Linux/MacOS are provided at [scripts](./scripts) directory. For instance, run the command below to setup your scenario on Linux:
 
 ```bash
-$ ./resources/setup-linux.bash
+$ /scripts/setup-linux.bash
 ```
+or 
+
+```bash
+$ /scripts/setup-mac.bash
+```
+for MacOS operating sysmtes
 
 ## Application used
 
